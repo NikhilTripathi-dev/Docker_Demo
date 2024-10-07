@@ -50,3 +50,12 @@ Get All Items: GET /items
 Get Item by ID: GET /items/{id}
 Update Item: PUT /items/{id}
 Delete Item: DELETE /items/{id}
+
+
+
+![image](https://github.com/user-attachments/assets/87b1c679-1c09-4a5d-a1c3-211e8aef9ecc)
+
+
+
+
+
