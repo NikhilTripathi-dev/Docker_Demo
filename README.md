@@ -55,6 +55,18 @@ Delete Item: DELETE /items/{id}
 
 ![image](https://github.com/user-attachments/assets/87b1c679-1c09-4a5d-a1c3-211e8aef9ecc)
 
+![image](https://github.com/user-attachments/assets/1ee4225b-0bcc-4417-ab92-bad763a3a5c2)
+
+![image](https://github.com/user-attachments/assets/91903866-033a-4234-b3ac-6a1f6eb3b9af)
+
+![image](https://github.com/user-attachments/assets/397ced1b-b97f-40ea-bfc7-bb0e63ddd4eb)
+
+![image](https://github.com/user-attachments/assets/55b26bcd-11e0-4c63-9d57-ef65be675479)
+
+
+
+
+
 
 
 
