@@ -6,31 +6,36 @@ services:
     image: spring-boot-webapp:latest
     container_name: spring-boot-webapp
     ports:
-      - "8080:8080"
+      - "8080:8080" 
     depends_on:
       - mongodb
       - redis
     networks:
-      - app-network
+      - app-network  
 
   mongodb:
     image: mongo:latest
     container_name: mongodb
     ports:
-      - "27017:27017"
+      - "27017:27017" 
     environment:
-      MONGO_INITDB_DATABASE: test_db
+      MONGO_INITDB_DATABASE: mydatabase
+    volumes:
+      - mongo-data:/data/db 
     networks:
-      - app-network
+      - app-network 
 
   redis:
     image: redis:latest
-    container_name: redis-container
+    container_name: redis
     ports:
-      - "6379:6379"
+      - "6379:6379"  
     networks:
-      - app-network
+      - app-network  
 
 networks:
-  app-network:
-    driver: bridge
+  app-network:  
+    driver: bridge  
+
+volumes:
+  mongo-data:  
