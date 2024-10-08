@@ -1,45 +1,36 @@
 version: '3.8'
-services:
-  app:
-    image: demo
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080" 
-    environment:
-      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/test_db
-      SPRING_REDIS_HOST: redis
-      SPRING_REDIS_PORT: 6379
-    depends_on:
-      - mongo
-      - redis
-   networks:
-     - backend 
 
-  mongo:
-    image: mongo:6.0
-    container_name: mongo
+services:
+  webapp:
+    build: .
+    image: demo
+    container_name: spring-boot-webapp
     ports:
-      - "27017:27017"  # Exposing MongoDB
-    volumes:
-      - mongo_data:/data/db
+      - "8080:8080"
+    depends_on:
+      - mongodb
+      - redis
     networks:
-     - backend 
+      - app-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: test_db
+    networks:
+      - app-network
 
   redis:
-    image: redis:7.0
-    container_name: redis
+    image: redis:latest
+    container_name: redis-container
     ports:
-      - "6379:6379"  # Exposing Redis
-    volumes:
-      - redis_data:/data
+      - "6379:6379"
     networks:
-     - backend 
-     
-networks:
-  backend:
+      - app-network
 
-volumes:
-  mongo_data:
-  redis_data:
+networks:
+  app-network:
+    driver: bridge
