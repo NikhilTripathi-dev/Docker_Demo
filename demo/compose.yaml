@@ -3,7 +3,7 @@ version: '3.8'
 services:
   webapp:
     build: .
-    image: demo
+    image: spring-boot-webapp:latest
     container_name: spring-boot-webapp
     ports:
       - "8080:8080"
